@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./Login.css";
+import LoadingSpinner from "./loader";
 
 const SignupForm = () => {
   const [name, setName] = useState('');
@@ -7,10 +9,12 @@ const SignupForm = () => {
   const [password, setPassword] = useState('');
   const [cpassword, setcPassword] = useState('');
   const [error, setError] = useState('');
- 
+  const [isLoading, setIsLoading] = useState(false);
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const response = await axios.post('http://localhost:5000/signup', {
         name,
@@ -18,6 +22,7 @@ const SignupForm = () => {
         password,
         cpassword,
       });
+      setIsLoading(false);
       console.log('Server response:', response.data);
 
       // Reset form fields
@@ -29,42 +34,56 @@ const SignupForm = () => {
     } catch (error) {
       if (error.response && error.response.status === 409) {
         setError('Email already registered');
+        setIsLoading(false);
       } else {
         console.error('Error signing up:', error.message);
+        setIsLoading(false);
       }
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-       <input
-        type="name"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <>
+       <div className='body'>
+      <div className='main'>
+        {/* <div className='first'>
+          <img src='./blood.png' />
+        </div> */}
+        <div className='second'>
+          <form onSubmit={handleSubmit}>
+            <h1>SignUp</h1>
+            <input
+              type="name"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-       <input
-        type="password"
-        placeholder="Confirm Password"
-        value={cpassword}
-        onChange={(e) => setcPassword(e.target.value)}
-      />
-      {error && <p>{error}</p>}
-      <button type="submit">Sign Up</button>
-    </form>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={cpassword}
+              onChange={(e) => setcPassword(e.target.value)}
+            />
+            {error && <p>{error}</p>}
+            <a >{isLoading ? <LoadingSpinner /> : <button>Sign Up</button>}</a>
+          </form>
+        </div>
+      </div>
+      </div>
+    </>
   );
 };
 
