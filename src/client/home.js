@@ -136,93 +136,37 @@ const Home = () => {
     </section>
     {/* Center Ends */}
     {/* Card Starts */}
-    <h1 className="title">Card Gallery</h1>
-    <div className="card-container" style={{display: 'flex', justifyContent: 'center'}}>
-      <div className="card">
-        <img src={Image1} alt="Image" />
-        <div className="card-text">
-          <h2>Card Title 1</h2>
-          <p>This is the description for Card 1.</p>
-          <a href className="hero-btn" style={{marginTop: '50px'}}> Learn More</a>
-        </div>
-      </div>
-      <div className="card">
-        <img src={Image2} alt="Image" />
-        <div className="card-text">
-          <h2>Card Title 2</h2>
-          <p>This is the description for Card 2.</p>
-          <a href className="hero-btn" style={{marginTop: '50px'}}> Learn More</a>
-        </div>
-      </div>
-      <div className="card">
-        <img src={Image3 } alt="Image" />
-        <div className="card-text">
-          <h2>Card Title 3</h2>
-          <p>This is the description for Card 3.</p>
-          <a href className="hero-btn" style={{marginTop: '50px'}}> Learn More</a>
-        </div>
-      </div>
-      <div className="card">
-        <img src={Image4}alt="Image" />
-        <div className="card-text">
-          <h2>Card Title 4</h2>
-          <p>This is the description for Card 4.</p>
-          <a href className="hero-btn" style={{marginTop: '50px'}}> Learn More</a>
-        </div>
-      </div>
-    </div>
+    <h1 style={{textAlign:"center"}}>Card Gallery</h1>
+
+<div className="card-container">
+  <div className="card">
+    <img src="path_to_image1.jpg" alt="Card 1" className="card-image" />
+    <h2 className="card-title">Card Title 1</h2>
+    <p>This is the description for Card 1.</p>
+    <a href="#" className="hero-btn1">Learn More</a>
+  </div>
+  <div className="card">
+    <img src="path_to_image2.jpg" alt="Card 2" className="card-image" />
+    <h2 className="card-title">Card Title 2</h2>
+    <p>This is the description for Card 2.</p>
+    <a href="#" className="hero-btn1">Learn More</a>
+  </div>
+  <div className="card">
+    <img src="path_to_image3.jpg" alt="Card 3" className="card-image" />
+    <h2 className="card-title">Card Title 3</h2>
+    <p>This is the description for Card 3.</p>
+    <a href="#" className="hero-btn1">Learn More</a>
+  </div>
+  <div className="card">
+    <img src="path_to_image4.jpg" alt="Card 4" className="card-image" />
+    <h2 className="card-title">Card Title 4</h2>
+    <p>This is the description for Card 4.</p>
+    <a href="#" className="hero-btn1">Learn More</a>
+  </div>
+</div>
     {/* Cards Ends */}
     {/* Counter Starts */}
-    <h2 className="title">Counter Section</h2>
-    <div className="container-wrapper">
-      <div className="container" style={{fontSize:"55px"}}>
-      <Counter elementId="counter1" className="counter" targetNumber={990} />
-        <div className="text">Counter 1</div>
-        <a href className="hero-btn1" style={{marginTop: '50px'}}> Read More</a>
-      </div>
-      <div className="container" style={{fontSize:"55px"}}>
-      <Counter elementId="counter2" className="counter"targetNumber={156} />
-      
-        <div className="text">Counter 2</div>
-        <a href className="hero-btn1" style={{marginTop: '50px'}}> Read More</a>
-      </div>
-      <div className="container" style={{fontSize:"55px"}}>
-      <Counter elementId="counter3" className="counter" targetNumber={43000000} />
-        <div className="text">Counter 3</div>
-        <a href className="hero-btn1" style={{marginTop: '50px'}}> Read More</a>
-      </div>
-    </div>
-    {/* Counter Ends */}
-    <div className="sliding-text">
-      <span>
-        <div className="sliding-text-content">
-          <h2 className="sliding-text-title">Blood Bank Management System</h2>
-        </div>
-      </span>
-      <div className="static-text">
-        <p>Transform your workplace culture and drive success.</p>
-        <a className="hero-btn" href="#" style={{top: '50px'}}>Learn More</a>
-      </div>
-    </div>
-    {/* call to action*/}
-    <section className="cta">
-      <h1>Enroll For Our Various Recruitment Solution <br /> Anywhere From The World</h1>
-      <a href className="hero-btn">CONTACT US</a>
-    </section>
-    {/* call to action */}
-    {/* Footer */}
-    <section className="footer">
-      <h4>About Us</h4>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi adipisci quos ab consequatur reprehenderit
-        sequi eos<br /> doloremque! Atque dicta, nisi obcaecati, deserunt corrupti possimus in ipsum enim quidem ut vel.
-      </p>
-      <div className="icons">
-        <i className="fa fa-facebook" />
-        <i className="fa fa-twitter" />
-        <i className="fa fa-instagram" />
-        <i className="fa fa-linkedin" />
-      </div>
-    </section>
+    
     {/* footer ends */}
     {/* Javascrit for trrogle menu */}
   </div>
