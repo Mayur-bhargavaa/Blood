@@ -1,18 +1,19 @@
 const nodemailer = require('nodemailer');
-
+require('dotenv').config();
 async function sendVerificationEmail(userEmail, verificationToken, name) {
   const transporter = nodemailer.createTransport({
     host:'smtp.gmail.com',
-    port:587,
+    port:process.env.SMTP_PORT,
     secure:false,
     requireTLS:true,
     service: 'Gmail',
     auth: {
-      user: 'mayurbhargava026@gmail.com',
-      pass: 'wohdgkvkfnewxrtx',
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+      
     },
+    
   });
-
   const mailOptions = {
     from: 'mayurbhargava026@gmail.com',
     to: userEmail,
@@ -31,7 +32,7 @@ async function sendVerificationEmail(userEmail, verificationToken, name) {
            justify-content: center;
            text-align:center;
            position: relative;
-           cursor: pointer;" href="http://localhost:5000/verify?token=${verificationToken}"><h style="text-align:center">Verify Email</h></a>`,
+           cursor: pointer;" href="https://blood-bank-mzgj.onrender.com/verify?token=${verificationToken}"><h style="text-align:center">Verify Email</h></a>`,
   };
 
   try {

@@ -1,11 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const router = require('./Routes/router');
-
+const source = process.env.DB_URL;
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://DBmayur:Mayur%402608@cluster0.ytcpzbb.mongodb.net/BloodUsers', {
+mongoose.connect(source, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -26,7 +27,7 @@ app.use(express.json());
 app.use(router);
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
