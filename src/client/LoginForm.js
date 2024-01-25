@@ -85,7 +85,7 @@ const LoginForm = () => {
 
               {/* <button disabled={isLoading} type="submit">{isLoading ? <LoadingSpinner /> : <a>Log In</a>}</button> */}
               <a >{isLoading ? <LoadingSpinner /> : <button>Log In</button>}</a>
-              <h5>Don't have an Account?<a href="http://localhost:3000/signup">SignUp</a></h5>
+              <Link to='/signup'><h5>Don't have an Account?<a>SignUp</a></h5></Link>
             </form>
           </div>
         </div>

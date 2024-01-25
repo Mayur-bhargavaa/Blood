@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../App.css";
 import Logo from "./image/logo.png";
-import Image1 from "./image/2672502.jpg";
-import Image2 from "./image/2706868.jpg";
-import Image3 from "./image/2802333.jpg";
-import Image4 from "./image/28491.jpg";
+
+import {useNavigate ,Link} from "react-router-dom";
 
 const Counter = ({ elementId, targetNumber }) => {
   const [currentNumber, setCurrentNumber] = useState(0);
@@ -120,7 +118,7 @@ const Home = () => {
               {isLoggedIn ? (
               <li><a href="#" onClick={handleLogout}>LOGOUT</a></li>
             ) : (
-              <li><a href="/login">LOGIN</a></li>
+              <Link to ="/login"><li><a>LOGIN</a></li></Link>
             )}
             </ul>
           </div>
